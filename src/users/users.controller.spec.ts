@@ -74,9 +74,9 @@ describe('UsersController', () => {
     const session = { userId: -20 };
     const user = await controller.signIn(
       { email: 'asd@asd.com', password: 'asd' },
-      { session },
+      session,
     );
-    expect(user).toEqual(1);
+    expect(user.id).toEqual(1);
     expect(session.userId).toEqual(1);
   });
 });
